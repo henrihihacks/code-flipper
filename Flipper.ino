@@ -224,6 +224,7 @@ void ActuatorManager(void) {
     for (index = 0; index < 6; index++) {
         if ((ActuatorsHandle[index].Status == 1) && (millis() >= ActuatorsHandle[index].TimeOut)) {
             digitalWrite(ActuatorsHandle[index].PinNumber, LOW);
+            ActuatorsHandle[index].Status = 0;
         }
     }
 }
